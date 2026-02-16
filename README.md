@@ -1,6 +1,6 @@
 # ColimaUI
 
-A macOS menu bar app that shows Colima status and lets you start or stop Colima from the menu. When Colima is running, it also shows running vs total Docker containers.
+A macOS menu bar app that shows Colima status and lets you start or stop Colima from the menu. When Colima is running, it shows running vs total Docker containers; you can click **Containers** to open a window listing all containers and start or stop them from the list.
 
 ## Requirements
 
@@ -14,9 +14,9 @@ A macOS menu bar app that shows Colima status and lets you start or stop Colima 
 2. Select the **ColimaUI** scheme and your Mac as the run destination.
 3. Press **⌘R** to build and run.
 
-To run tests: **⌘U** (or Product → Test). The **ColimaUITests** target tests `ColimaState` and ColimaService parsing (colima status output and container count line).
+To run tests: **⌘U** (or Product → Test). The **ColimaUITests** target tests parsing and validation used by ColimaService and Container (colima status, container count, container list, display name, running status, and safe container ID).
 
-The app appears as an icon in the menu bar (green when Colima is running, red when stopped). Use the menu to start or stop Colima, or quit the app.
+The app appears as an icon in the menu bar (green when Colima is running, red when stopped). Use the menu to start or stop Colima, open the Containers window, or quit the app.
 
 ## CI (GitHub Actions)
 

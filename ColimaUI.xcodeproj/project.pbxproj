@@ -11,6 +11,16 @@
 		517790542F43276C004606BA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517790552F43276C004606BA /* XCTest.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5177905E2F43276C004606BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517790112F43276C004606BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 517790182F43276C004606BA;
+			remoteInfo = ColimaUI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		517790192F43276C004606BA /* ColimaUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColimaUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		517790502F43276C004606BA /* ColimaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColimaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +61,7 @@
 				5177901B2F43276C004606BA /* ColimaUI */,
 				517790521F43276C004606BA /* ColimaUITests */,
 				5177901A2F43276C004606BA /* Products */,
+				517790FB2F433C6D004606BA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +80,14 @@
 				517790512F43276C004606BA /* ColimaUITests.swift */,
 			);
 			path = ColimaUITests;
+			sourceTree = "<group>";
+		};
+		517790FB2F433C6D004606BA /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				517790552F43276C004606BA /* XCTest.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,24 +187,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		5177905D2F43276C004606BA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 517790182F43276C004606BA /* ColimaUI */;
-			targetProxy = 5177905E2F43276C004606BA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXContainerItemProxy section - ColimaUITests dependency on ColimaUI */
-		5177905E2F43276C004606BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 517790112F43276C004606BA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 517790182F43276C004606BA;
-			remoteInfo = ColimaUI;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
 		517790152F43276C004606BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,6 +204,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5177905D2F43276C004606BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 517790182F43276C004606BA /* ColimaUI */;
+			targetProxy = 5177905E2F43276C004606BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		517790222F43276E004606BA /* Debug */ = {
@@ -406,7 +415,7 @@
 					"-Xlinker",
 					"-undefined",
 					"-Xlinker",
-					"dynamic_lookup",
+					dynamic_lookup,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.applydigital.ColimaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +445,7 @@
 					"-Xlinker",
 					"-undefined",
 					"-Xlinker",
-					"dynamic_lookup",
+					dynamic_lookup,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.applydigital.ColimaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

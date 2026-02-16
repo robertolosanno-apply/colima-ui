@@ -10,9 +10,12 @@ import AppKit
 /// Owns the menu bar status item, builds the menu from state, and coordinates refresh and start/stop.
 final class StatusMenuController: NSObject {
 
+    // MARK: - Properties
+
     private let statusItem: NSStatusItem
     private var timer: Timer?
     private var pendingOperation: String?  // "Starting" or "Stopping"
+    private let containersWindowController = ContainersWindowController()
 
     override init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -36,6 +39,8 @@ final class StatusMenuController: NSObject {
         menu.addItem(quitItem)
         statusItem.menu = menu
     }
+
+    // MARK: - Refresh & menu updates
 
     deinit {
         timer?.invalidate()
@@ -86,7 +91,9 @@ final class StatusMenuController: NSObject {
         menu.addItem(NSMenuItem(title: statusText, action: nil, keyEquivalent: ""))
 
         if state.isRunning, !isBusy, let r = state.containerRunning, let t = state.containerTotal {
-            menu.addItem(NSMenuItem(title: "Containers: \(r) / \(t)", action: nil, keyEquivalent: ""))
+            let containersItem = NSMenuItem(title: "Containers: \(r) / \(t)", action: #selector(showContainersWindow), keyEquivalent: "")
+            containersItem.target = self
+            menu.addItem(containersItem)
         }
 
         menu.addItem(NSMenuItem.separator())
@@ -111,6 +118,8 @@ final class StatusMenuController: NSObject {
         statusItem.menu = menu
     }
 
+    // MARK: - Actions
+
     @objc private func startColima() {
         pendingOperation = "Starting"
         updateMenu(state: ColimaState(isRunning: false, containerRunning: nil, containerTotal: nil))
@@ -125,6 +134,10 @@ final class StatusMenuController: NSObject {
         ColimaService.runColima(["stop"]) { [weak self] in
             self?.refresh()
         }
+    }
+
+    @objc private func showContainersWindow() {
+        containersWindowController.show()
     }
 
     @objc private func quit() {
