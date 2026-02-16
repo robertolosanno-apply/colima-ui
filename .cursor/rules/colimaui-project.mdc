@@ -1,0 +1,13 @@
+---
+description: ColimaUI project context
+alwaysApply: true
+---
+
+# ColimaUI
+
+macOS **menu bar app** for [Colima](https://github.com/abiosoft/colima): status (🟢/🔴), start/stop, container count when running.
+
+- **Stack:** SwiftUI entry + AppKit (NSStatusItem, NSMenu). Commands run via `/bin/zsh -l -c` so `colima`/`docker` use the user’s env.
+- **Layout:** `ColimaUIApp.swift` (app + AppDelegate), `ColimaState.swift`, `ColimaService.swift` (shell/colima/docker), `StatusMenuController.swift` (menu + timer). Tests in `ColimaUITests/` use local parsing helpers (no @testable import) to avoid cross-module crashes.
+- **UI:** Update menu/icon on main thread only. No App Sandbox (needed to run colima).
+- **Tests:** Run parsing logic in the test target; keep same behavior as `ColimaService.isRunning(fromColimaStatusOutput:)` and `parseContainerCountLine(_:)`.

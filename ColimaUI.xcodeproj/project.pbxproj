@@ -6,8 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		517790532F43276C004606BA /* ColimaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517790512F43276C004606BA /* ColimaUITests.swift */; };
+		517790542F43276C004606BA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517790552F43276C004606BA /* XCTest.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		517790192F43276C004606BA /* ColimaUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColimaUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		517790502F43276C004606BA /* ColimaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColimaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		517790512F43276C004606BA /* ColimaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColimaUITests.swift; sourceTree = "<group>"; };
+		517790552F43276C004606BA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +34,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		517790572F43276C004606BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				517790542F43276C004606BA /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				5177901B2F43276C004606BA /* ColimaUI */,
+				517790521F43276C004606BA /* ColimaUITests */,
 				5177901A2F43276C004606BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +58,17 @@
 			isa = PBXGroup;
 			children = (
 				517790192F43276C004606BA /* ColimaUI.app */,
+				517790502F43276C004606BA /* ColimaUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		517790521F43276C004606BA /* ColimaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				517790512F43276C004606BA /* ColimaUITests.swift */,
+			);
+			path = ColimaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,6 +95,26 @@
 			productName = ColimaUI;
 			productReference = 517790192F43276C004606BA /* ColimaUI.app */;
 			productType = "com.apple.product-type.application";
+		};
+		517790592F43276C004606BA /* ColimaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5177905A2F43276C004606BA /* Build configuration list for PBXNativeTarget "ColimaUITests" */;
+			buildPhases = (
+				5177905B2F43276C004606BA /* Sources */,
+				517790572F43276C004606BA /* Frameworks */,
+				5177905C2F43276C004606BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5177905D2F43276C004606BA /* PBXTargetDependency */,
+			);
+			name = ColimaUITests;
+			packageProductDependencies = (
+			);
+			productName = ColimaUITests;
+			productReference = 517790502F43276C004606BA /* ColimaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +146,7 @@
 			projectRoot = "";
 			targets = (
 				517790182F43276C004606BA /* ColimaUI */,
+				517790592F43276C004606BA /* ColimaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -112,13 +159,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5177905C2F43276C004606BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5177905D2F43276C004606BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 517790182F43276C004606BA /* ColimaUI */;
+			targetProxy = 5177905E2F43276C004606BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section - ColimaUITests dependency on ColimaUI */
+		5177905E2F43276C004606BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 517790112F43276C004606BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 517790182F43276C004606BA;
+			remoteInfo = ColimaUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		517790152F43276C004606BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5177905B2F43276C004606BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				517790532F43276C004606BA /* ColimaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,13 +328,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -278,13 +360,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,6 +383,66 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5177905F2F43276E004606BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ColimaUI.app/Contents/MacOS/ColimaUI";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Xlinker",
+					"-undefined",
+					"-Xlinker",
+					"dynamic_lookup",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.applydigital.ColimaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		517790602F43276E004606BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ColimaUI.app/Contents/MacOS/ColimaUI";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Xlinker",
+					"-undefined",
+					"-Xlinker",
+					"dynamic_lookup",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.applydigital.ColimaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -320,6 +464,15 @@
 			buildConfigurations = (
 				517790252F43276E004606BA /* Debug */,
 				517790262F43276E004606BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5177905A2F43276C004606BA /* Build configuration list for PBXNativeTarget "ColimaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5177905F2F43276E004606BA /* Debug */,
+				517790602F43276E004606BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

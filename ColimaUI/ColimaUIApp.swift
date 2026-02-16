@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct ColimaUIApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings {
+            EmptyView()
         }
+    }
+}
+
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    private var statusMenuController: StatusMenuController?
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        statusMenuController = StatusMenuController()
     }
 }

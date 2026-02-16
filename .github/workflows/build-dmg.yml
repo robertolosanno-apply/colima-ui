@@ -1,0 +1,52 @@
+name: Build and create DMG
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          xcodebuild test -scheme ColimaUI \
+            -destination 'platform=macOS' \
+            -derivedDataPath build \
+            -resultBundlePath TestResults.xcresult \
+            -only-testing:ColimaUITests \
+            CODE_SIGN_IDENTITY="-" \
+            MACOSX_DEPLOYMENT_TARGET=14.0
+
+      - name: Build ColimaUI
+        run: |
+          xcodebuild -scheme ColimaUI \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="-" \
+            MACOSX_DEPLOYMENT_TARGET=14.0 \
+            clean build
+
+      - name: Create DMG
+        run: |
+          APP_PATH="build/Build/Products/Release/ColimaUI.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "::error::App not found at $APP_PATH"
+            exit 1
+          fi
+          hdiutil create -volname "ColimaUI" \
+            -srcfolder "$APP_PATH" \
+            -ov -format UDZO \
+            ColimaUI.dmg
+          ls -la ColimaUI.dmg
+
+      - name: Upload DMG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ColimaUI-macOS
+          path: ColimaUI.dmg
