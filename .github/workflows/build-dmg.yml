@@ -12,6 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Project uses Xcode project format 77; need Xcode 16+
+      - name: Select Xcode 16
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16'
+
       - name: Run tests
         run: |
           xcodebuild test -scheme ColimaUI \
