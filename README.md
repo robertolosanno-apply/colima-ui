@@ -18,15 +18,22 @@ To run tests: **⌘U** (or Product → Test). The **ColimaUITests** target tests
 
 The app appears as an icon in the menu bar (green when Colima is running, red when stopped). Use the menu to start or stop Colima, open the Containers window, or quit the app.
 
-## CI (GitHub Actions)
+## Download
 
-A workflow in `.github/workflows/build-dmg.yml` builds the app and creates a DMG on push or PR to `main`/`master`, and on manual run (**Actions → Build and create DMG → Run workflow**). The DMG is uploaded as an artifact (**Actions → run → Artifacts**). The build uses the runner’s default Xcode and sets `MACOSX_DEPLOYMENT_TARGET=14.0` so it succeeds on GitHub’s macOS runners.
+Pre-built DMGs are available on the [Releases](../../releases) page. Download the latest `ColimaUI-vX.Y.Z.dmg`, open it, and drag the app to your Applications folder.
+
+**First launch:** macOS may show "ColimaUI is from an unidentified developer." Right-click the app → **Open**, then click **Open** in the dialog, or allow it in **System Settings → Privacy & Security**.
+
+## CI / Releases (GitHub Actions)
+
+- **`build-dmg.yml`** — builds and tests on every push to `main`; uploads a DMG as a temporary artifact.
+- **`release.yml`** — triggers on `v*` tags; builds, tests, and publishes a permanent GitHub Release with the DMG attached.
+
+To cut a release: push a version tag (e.g. `git tag v1.0.0 && git push origin v1.0.0`).
 
 ## Distribution
 
-You can build the app in Xcode and distribute the `.app` (e.g. in a ZIP or DMG)—no Apple Developer Program required. The app is not sandboxed (so it can run the Colima CLI) and therefore cannot be submitted to the Mac App Store.
-
-**First launch:** macOS may show "ColimaUI is from an unidentified developer." The user can **right-click the app → Open** and then click **Open** in the dialog, or allow it once in **System Settings → Privacy & Security**. After that, the app opens normally. There is no free way to remove this one-time prompt without a paid Apple Developer account (which provides signing and notarization).
+The app is not sandboxed (so it can run the Colima CLI) and cannot be submitted to the Mac App Store. No Apple Developer Program is required to build or distribute it.
 
 ## License
 
